@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import TranslateIcon from "@mui/icons-material/Translate";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import ThemeToggleButton from "../../styles/ThemeToggleButton";
 
 const navItems = [
   { label: "Learn", path: "/learn" },
