@@ -22,6 +22,7 @@ import SearchBar from "./SearchBar";
 import MenuBar from "./MenuBar";
 import { TopbarContainer } from "../StyledComponents/TopbarContainer";
 import { DrawerHeader } from "../StyledComponents/DrawerHeader";
+import SearchIcon from "@mui/icons-material/Search";
 
 const TopBar = () => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("md"));
@@ -116,6 +117,9 @@ const TopBar = () => {
                 sx={{ marginLeft: "auto" }}
               >
                 <MenuIcon />
+              </IconButton>
+              <IconButton>
+                <SearchIcon />
               </IconButton>
               <Drawer
                 anchor="left"
