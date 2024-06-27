@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import logoSrc from "../../assets/logo_dark.svg";
 import { LogoImage } from "../StyledComponents/LogoImage";
 import { useNavigate } from "react-router-dom";
+
 const Logo = ({ src, alt, ...props }) => {
   const navigate = useNavigate();
 

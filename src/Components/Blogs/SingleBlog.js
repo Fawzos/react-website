@@ -5,8 +5,13 @@ import {
   Container,
   Typography,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const SingleBlog = ({ blog }) => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/blogs/:id");
+  };
   return (
     <Container>
       <Card
@@ -35,6 +40,7 @@ const SingleBlog = ({ blog }) => {
           <Button
             variant="text"
             sx={{ color: "#56BFD6", textTransform: "none" }}
+            onClick={handleClick}
           >
             Read more
           </Button>
