@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { Container, Paper, ThemeProvider } from "@mui/material";
+import TopBar from "./Components/AppBar/TopBar";
+import Section from "./Components/Section/Section";
+import sectionConfig from "./Components/Section/SectionConfig";
+import GlobalCssBaseline from "./styles/GlobalStyles";
+import { Outlet } from "react-router-dom";
+import { lightTheme, darkTheme } from "./styles/theme";
+import Footer from "./Components/footer/Footer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={darkTheme}>
+      <GlobalCssBaseline />
+      <TopBar />
+      {/* <ThemeToggleButton /> */}
+      <Outlet />
+
+      <Footer />
+    </ThemeProvider>
   );
 }
 
