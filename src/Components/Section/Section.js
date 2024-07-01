@@ -21,36 +21,18 @@ const Section = ({
   return (
     <SectionWrapper sx={{ backgroundColor }}>
       {img && (
-        <ImageWrapper
-          sx={{
-            order: order === "first" ? 1 : 2,
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center ",
-          }}
-        >
-          <StyledImage
-            src={img}
-            alt={title}
-            sx={{
-              width: order === "first" ? "100px" : "1208px",
-              height: order === "first" ? "100px" : "322px",
-              my: 5,
-            }}
-          />
+        <ImageWrapper order={order}>
+          <StyledImage src={img} alt={title} order={order} />
         </ImageWrapper>
       )}
-      <TextWrapper sx={{ order: order === "first" ? 2 : 1 }}>
+      <TextWrapper order={order} isMobile={isMobile}>
         {title && (
           <Typography
             gutterBottom
+            variant="h2"
             sx={{
-              width: isMobile ? "100%" : "650px",
-              textAlign: "center",
               fontSize: isMobile ? "32px" : "52px",
               fontWeight: "400",
-              fontFamily: "Optimistic Display",
             }}
           >
             {title}
@@ -59,29 +41,27 @@ const Section = ({
         {subTitle && (
           <Typography
             gutterBottom
+            variant="body1"
             sx={{
               fontSize: isMobile ? "16px" : "20px",
               maxWidth: isMobile ? "100%" : "48rem",
-              textAlign: isMobile ? "left" : "center",
             }}
           >
             {subTitle}
           </Typography>
         )}
+        {discription && (
+          <Typography
+            variant="body1"
+            sx={{
+              fontSize: isMobile ? "16px" : "20px",
+              textAlign: isMobile ? "left" : "center",
+            }}
+          >
+            {discription}
+          </Typography>
+        )}
       </TextWrapper>
-      {discription && (
-        <Typography
-          sx={{
-            width: isMobile ? "100%" : "650px",
-            fontSize: isMobile ? "16px" : "20px",
-            textAlign: isMobile ? "left" : "center",
-            fontFamily: "Optimistic Display",
-            order: 3,
-          }}
-        >
-          {discription}
-        </Typography>
-      )}
       <Box sx={{ order: 4 }}>
         {btn && btn}
         {darkBtn && darkBtn}

@@ -8,17 +8,7 @@ const Landing = () => {
   return (
     <Container maxWidth={false} disableGutters>
       {sectionConfig.map((section, index) => (
-        <Section
-          key={index}
-          img={section.img}
-          order={section.imgOrder}
-          title={section.title}
-          subTitle={section.subTitle}
-          backgroundColor={section.backgroundColor}
-          btn={section.btn}
-          darkBtn={section.darkBtn}
-          discription={section.discription}
-        />
+        <Section key={index} {...section} />
       ))}
       <CommunitySection />
     </Container>

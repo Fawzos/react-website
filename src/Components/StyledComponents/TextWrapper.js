@@ -1,12 +1,8 @@
 import { Box, styled } from "@mui/material";
 
-export const TextWrapper = styled(Box)(({ theme }) => ({
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  order: 2,
-  [theme.breakpoints.down("md")]: {
-    alignItems: "center",
-    justifyContent: "center",
-  },
+export const TextWrapper = styled(Box)(({ theme, order, isMobile }) => ({
+  order: order === "first" ? 2 : 1,
+  textAlign: "center",
+  width: isMobile ? "100%" : "650px",
+  margin: theme.spacing(3, 0),
 }));

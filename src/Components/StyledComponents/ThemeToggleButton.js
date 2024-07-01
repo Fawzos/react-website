@@ -1,7 +1,7 @@
 // ThemeToggleButton.js
 import React, { useContext } from "react";
 import { Button } from "@mui/material";
-import { ThemeContext } from "./ThemeContext";
+import { ThemeContext } from "../../styles/ThemeContext";
 
 const ThemeToggleButton = () => {
   const { isDarkMode, toggleTheme } = useContext(ThemeContext);
