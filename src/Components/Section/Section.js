@@ -14,6 +14,8 @@ const Section = ({
   btn,
   discription,
   darkBtn,
+  width,
+  height,
 }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -22,7 +24,13 @@ const Section = ({
     <SectionWrapper sx={{ backgroundColor }}>
       {img && (
         <ImageWrapper order={order}>
-          <StyledImage src={img} alt={title} order={order} />
+          <StyledImage
+            src={img}
+            alt={title}
+            order={order}
+            width={width}
+            height={height}
+          />
         </ImageWrapper>
       )}
       <TextWrapper order={order} isMobile={isMobile}>
